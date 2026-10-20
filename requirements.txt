@@ -1,0 +1,6 @@
+pydantic
+requests
+streamlit
+pandas
+plotly
+pytest

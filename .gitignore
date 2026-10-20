@@ -1,0 +1,14 @@
+### python
+__pycache__/
+*py[cod]
+.venv/
+venv
+### sqlite 
+*.db
+*.sqlite3
+### env secrets
+.env
+### macOS artifacts
+.DS_Store
+### pytest cache
+.pytest_cache/
