@@ -1,0 +1,69 @@
+{
+  "4688": {
+    "function": "Detect",
+    "category": "DE.CM",
+    "subcategory": "DE.CM-09",
+    "description": "Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events"
+  },
+  "4625": {
+    "function": "Detect",
+    "category": "DE.CM",
+    "subcategory": "DE.CM-03",
+    "description": "Personnel activity and technology usage are monitored to find potentially adverse events"
+  },
+  "4624": {
+    "function": "Protect",
+    "category": "PR.AA",
+    "subcategory": "PR.AA-03",
+    "description": "Users, services, and hardware are authenticated"
+  },
+  "1102": {
+    "function": "Govern",
+    "category": "GV.OV",
+    "subcategory": "GV.OV-03",
+    "description": "Organizational cybersecurity risk management performance is evaluated and reviewed for adjustments needed"
+  },
+  "7045": {
+    "function": "Detect",
+    "category": "DE.AE",
+    "subcategory": "DE.AE-03",
+    "description": "Information is correlated from multiple sources to detect unauthorized system or service changes"
+  },
+  "4720": {
+    "function": "Protect",
+    "category": "PR.AA",
+    "subcategory": "PR.AA-01",
+    "description": "Identities and credentials for authorized users, services, and hardware are managed by the organization"
+  },
+  "SSH_AUTH_FAIL": {
+    "function": "Detect",
+    "category": "DE.CM",
+    "subcategory": "DE.CM-03",
+    "description": "Personnel activity and technology usage are monitored to find potentially adverse events"
+  },
+  "SUDO_EXEC": {
+    "function": "Protect",
+    "category": "PR.AA",
+    "subcategory": "PR.AA-05",
+    "description": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed"
+  },
+  "AUDITD_EXECVE": {
+    "function": "Detect",
+    "category": "DE.CM",
+    "subcategory": "DE.CM-09",
+    "description": "Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events"
+  },
+  "WEB_ATTACK": {
+    "function": "Detect",
+    "category": "DE.CM",
+    "subcategory": "DE.CM-01",
+    "description": "Networks and network services are monitored to find potentially adverse events"
+  },
+  "DEFAULT": {
+    "function": "Detect",
+    "category": "DE.AE",
+    "subcategory": "DE.AE-02",
+    "description": "Potentially adverse events are analyzed to better understand associated activities"
+  }
+}
+
