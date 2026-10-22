@@ -6,6 +6,18 @@
 
 ---
 
+## Why Use LogBridge Framework?
+
+Security teams often face a gap between **SOC detection engineering** (tracking adversary tactics and techniques in MITRE ATT&CK) and **executive GRC auditing** (proving telemetry coverage against NIST CSF 2.0 subcategories). At the same time, parsing and enrichment rules are frequently locked inside vendor-specific SIEM queries (SPL, KQL, or Logstash filters), making migrations and local testing painful.
+
+`LogBridge Framework` solves both problems in a single pipeline:
+
+* **Bridges SOC Operations & Executive Compliance:** Automatically tags every raw log event with both its **MITRE ATT&CK v20** Tactic/Technique (for threat hunters and incident responders) and its **NIST CSF 2.0** Function/Subcategory (for CISOs, auditors, and posture reporting).
+* **Eliminates SIEM Vendor Lock-In:** Normalizes and enriches telemetry *before* it reaches the SIEM, exporting ready-to-ingest payloads for **Splunk HEC**, **Microsoft Sentinel (Syslog CEF)**, and **Elastic Stack / Logstash (NDJSON)**.
+* **Zero-Infrastructure Local Auditing & Purple Teaming:** Runs completely standalone with local SQLite storage and an interactive Streamlit dashboard—ideal for purple-team attack replay, offline incident triage, home labs, and validating detection coverage without paying for SIEM ingestion volume.
+
+---
+
 ## 1. High-Level Dual-Mode Architecture
 
 ```text
