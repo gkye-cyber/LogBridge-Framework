@@ -12,3 +12,6 @@ venv
 .DS_Store
 ### pytest cache
 .pytest_cache/
+### AI agents
+.agents/
+.claude/

