@@ -145,7 +145,37 @@ python -m pytest -v
 
 ---
 
-## 6. License
+## 6. Release Notes & Version History
+
+### `v1.0.0` — Initial Release (2026-10-22)
+* **Core Ingestion & Normalization (`src/engine.py`):** Added `LogNormalizer` and `NormalizedLog` Pydantic schema supporting Windows EVTX (JSON & Key-Value), Linux Syslog (`sshd` & `sudo`), Linux `auditd` (`EXECVE`), and Web Server HTTP access logs.
+* **Dual-Framework Enrichment (`src/mapper.py` & `mappings/`):** Implemented `FrameworkMapper` with regex sub-technique matching mapped to **MITRE ATT&CK v20** and **NIST CSF 2.0** (`Govern`, `Protect`, and `Detect` functions).
+* **Dual Output Handlers (`src/siem_connectors.py`):** Added `SQLiteStorage` for local standalone persistence and `SIEMExporter` for **Splunk HEC (JSON)**, **Microsoft Sentinel (Syslog CEF)**, and **Elastic Stack / Logstash (NDJSON)**.
+* **Standalone Executive Dashboard (`src/app.py`):** Built interactive Streamlit UI featuring KPI metrics, NIST CSF 2.0 coverage gauge, MITRE ATT&CK technique hit heatmap, event inspector, and SIEM forwarder test console.
+* **Sample Telemetry & Test Suite (`sample_telemetry/` & `tests/`):** Included 3 multi-source intrusion datasets and 11 unit/integration tests via `pytest`.
+
+---
+
+## 7. Future Updates & Roadmap
+
+* **Sigma Rule Integration:** Native ingestion of community Sigma rules to automatically compile into `mitre_attck_map.json` and `nist_csf_map.json` detection signatures.
+* **Cloud Telemetry Parsers:** Expanded normalization support for AWS CloudTrail, Azure Activity Logs, and Google Cloud Audit Logs.
+* **Real-Time Streaming Daemons:** Support for live Kafka, Syslog UDP/TCP socket listeners, and Windows Event Forwarding (WEF) subscriptions.
+* **Automated Alerting & SOAR Webhooks:** Threshold-based alerting to Slack, Microsoft Teams, PagerDuty, and Shuffle/TheHive SOAR playbooks.
+* **MITRE ATT&CK Navigator Export:** One-click export of enriched technique hits to a native ATT&CK Navigator layer JSON file.
+
+---
+
+## 8. Author & Maintainer
+
+* **Developer:** Gavin Kye (Cybersecurity Consultant)
+* **Role:** Digital Forensic/IR/Malware Investigator - Security/Software Engineer
+* **Github:** [@gkye-cyber](https://github.com/gkye-cyber)
+* **LinkedIn:** [linkedin.com/in/gavin-kyesr](https://linkedin.com/in/gavin-kyesr)
+
+---
+
+## 9. License
 
 Distributed under the **MIT License**. See [`LICENSE`](./LICENSE) for more information.
 
