@@ -12,9 +12,9 @@ Security teams often face a gap between **SOC detection engineering** (tracking 
 
 `LogBridge Framework` solves both problems in a single pipeline:
 
-* **Bridges SOC Operations & Executive Compliance:** Automatically tags every raw log event with both its **MITRE ATT&CK v20** Tactic/Technique (for threat hunters and incident responders) and its **NIST CSF 2.0** Function/Subcategory (for CISOs, auditors, and posture reporting).
-* **Eliminates SIEM Vendor Lock-In:** Normalizes and enriches telemetry *before* it reaches the SIEM, exporting ready-to-ingest payloads for **Splunk HEC**, **Microsoft Sentinel (Syslog CEF)**, and **Elastic Stack / Logstash (NDJSON)**.
-* **Zero-Infrastructure Local Auditing & Purple Teaming:** Runs completely standalone with local SQLite storage and an interactive Streamlit dashboard—ideal for purple-team attack replay, offline incident triage, home labs, and validating detection coverage without paying for SIEM ingestion volume.
+* **Bridges SOC Operations & Executive Compliance:** Automatically tags every raw log event with both its **MITRE ATT&CK v20** Tactic/Technique (for threat hunters and incident responders) and its **NIST CSF 2.0** Function/Subcategory (for CISOs, auditors, and posture reporting)
+* **Eliminates SIEM Vendor Lock-In:** Normalizes and enriches telemetry *before* it reaches the SIEM, exporting ready-to-ingest payloads for **Splunk HEC**, **Microsoft Sentinel (Syslog CEF)**, and **Elastic Stack / Logstash (NDJSON)**
+* **Zero-Infrastructure Local Auditing & Purple Teaming:** Runs completely standalone with local SQLite storage and an interactive Streamlit dashboard—ideal for purple-team attack replay, offline incident triage, home labs, and validating detection coverage without paying for SIEM ingestion volume
 
 ---
 
@@ -37,8 +37,8 @@ Security teams often face a gap between **SOC detection engineering** (tracking 
   • NIST CSF 2.0 & ATT&CK Heatmaps        • Elastic Stack / Logstash (NDJSON)
 ```
 
-* **Standalone Mode:** Ingests raw logs (JSON, Key-Value EVTX, Syslog, Auditd, and HTTP access logs), normalizes fields into a unified Pydantic schema, enriches events with MITRE ATT&CK and NIST CSF 2.0 metadata, persists state in SQLite, and presents live telemetry gauges and heatmaps via a Streamlit Executive Dashboard.
-* **SIEM Integrated Mode:** Formats and forwards the exact same enriched telemetry into enterprise SIEM formats, including **Splunk HEC JSON envelopes**, **Microsoft Sentinel Common Event Format (CEF)**, and **Elastic Stack / Logstash bulk NDJSON**.
+* **Standalone Mode:** Ingests raw logs (JSON, Key-Value EVTX, Syslog, Auditd, and HTTP access logs), normalizes fields into a unified Pydantic schema, enriches events with MITRE ATT&CK and NIST CSF 2.0 metadata, persists state in SQLite, and presents live telemetry gauges and heatmaps via a Streamlit Executive Dashboard
+* **SIEM Integrated Mode:** Formats and forwards the exact same enriched telemetry into enterprise SIEM formats, including **Splunk HEC JSON envelopes**, **Microsoft Sentinel Common Event Format (CEF)**, and **Elastic Stack / Logstash bulk NDJSON**
 
 ---
 
@@ -148,7 +148,7 @@ Then open `http://localhost:8501` in your browser.
 
 ### Loading Sample Telemetry in the Dashboard
 1. Click **Load Sample Telemetry** in the left sidebar for instant built-in telemetry, **or**
-2. Upload any file from `sample_telemetry/` (`windows_evtx.json`, `linux_syslog_auditd.log`, or `mixed_attack_campaign.log`) using the sidebar file uploader and click **Ingest & Enrich Custom Logs**.
+2. Upload any file from `sample_telemetry/` (`windows_evtx.json`, `linux_syslog_auditd.log`, or `mixed_attack_campaign.log`) using the sidebar file uploader and click **Ingest & Enrich Custom Logs**
 
 ### Running Unit Tests
 ```bash
@@ -160,21 +160,21 @@ python -m pytest -v
 ## 6. Release Notes & Version History
 
 ### `v1.0.0` — Initial Release (2026-10-22)
-* **Core Ingestion & Normalization (`src/engine.py`):** Added `LogNormalizer` and `NormalizedLog` Pydantic schema supporting Windows EVTX (JSON & Key-Value), Linux Syslog (`sshd` & `sudo`), Linux `auditd` (`EXECVE`), and Web Server HTTP access logs.
-* **Dual-Framework Enrichment (`src/mapper.py` & `mappings/`):** Implemented `FrameworkMapper` with regex sub-technique matching mapped to **MITRE ATT&CK v20** and **NIST CSF 2.0** (`Govern`, `Protect`, and `Detect` functions).
-* **Dual Output Handlers (`src/siem_connectors.py`):** Added `SQLiteStorage` for local standalone persistence and `SIEMExporter` for **Splunk HEC (JSON)**, **Microsoft Sentinel (Syslog CEF)**, and **Elastic Stack / Logstash (NDJSON)**.
-* **Standalone Executive Dashboard (`src/app.py`):** Built interactive Streamlit UI featuring KPI metrics, NIST CSF 2.0 coverage gauge, MITRE ATT&CK technique hit heatmap, event inspector, and SIEM forwarder test console.
-* **Sample Telemetry & Test Suite (`sample_telemetry/` & `tests/`):** Included 3 multi-source intrusion datasets and 11 unit/integration tests via `pytest`.
+* **Core Ingestion & Normalization (`src/engine.py`):** Added `LogNormalizer` and `NormalizedLog` Pydantic schema supporting Windows EVTX (JSON & Key-Value), Linux Syslog (`sshd` & `sudo`), Linux `auditd` (`EXECVE`), and Web Server HTTP access logs
+* **Dual-Framework Enrichment (`src/mapper.py` & `mappings/`):** Implemented `FrameworkMapper` with regex sub-technique matching mapped to **MITRE ATT&CK v20** and **NIST CSF 2.0** (`Govern`, `Protect`, and `Detect` functions)
+* **Dual Output Handlers (`src/siem_connectors.py`):** Added `SQLiteStorage` for local standalone persistence and `SIEMExporter` for **Splunk HEC (JSON)**, **Microsoft Sentinel (Syslog CEF)**, and **Elastic Stack / Logstash (NDJSON)**
+* **Standalone Executive Dashboard (`src/app.py`):** Built interactive Streamlit UI featuring KPI metrics, NIST CSF 2.0 coverage gauge, MITRE ATT&CK technique hit heatmap, event inspector, and SIEM forwarder test console
+* **Sample Telemetry & Test Suite (`sample_telemetry/` & `tests/`):** Included 3 multi-source intrusion datasets and 11 unit/integration tests via `pytest`
 
 ---
 
 ## 7. Future Updates & Roadmap
 
-* **Sigma Rule Integration:** Native ingestion of community Sigma rules to automatically compile into `mitre_attck_map.json` and `nist_csf_map.json` detection signatures.
-* **Cloud Telemetry Parsers:** Expanded normalization support for AWS CloudTrail, Azure Activity Logs, and Google Cloud Audit Logs.
-* **Real-Time Streaming Daemons:** Support for live Kafka, Syslog UDP/TCP socket listeners, and Windows Event Forwarding (WEF) subscriptions.
-* **Automated Alerting & SOAR Webhooks:** Threshold-based alerting to Slack, Microsoft Teams, PagerDuty, and Shuffle/TheHive SOAR playbooks.
-* **MITRE ATT&CK Navigator Export:** One-click export of enriched technique hits to a native ATT&CK Navigator layer JSON file.
+* **Sigma Rule Integration:** Native ingestion of community Sigma rules to automatically compile into `mitre_attck_map.json` and `nist_csf_map.json` detection signatures
+* **Cloud Telemetry Parsers:** Expanded normalization support for AWS CloudTrail, Azure Activity Logs, and Google Cloud Audit Logs
+* **Real-Time Streaming Daemons:** Support for live Kafka, Syslog UDP/TCP socket listeners, and Windows Event Forwarding (WEF) subscriptions
+* **Automated Alerting & SOAR Webhooks:** Threshold-based alerting to Slack, Microsoft Teams, PagerDuty, and Shuffle/TheHive SOAR playbooks
+* **MITRE ATT&CK Navigator Export:** One-click export of enriched technique hits to a native ATT&CK Navigator layer JSON file
 
 ---
 
