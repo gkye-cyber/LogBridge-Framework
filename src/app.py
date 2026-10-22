@@ -51,7 +51,7 @@ def ingest_lines(lines: List[str]) -> int:
 with st.sidebar:
     st.header("Log Ingestion Controls")
 
-    if st.button("Load Telemetry", use_container_width=True):
+    if st.button("Load Sample Telemetry", use_container_width=True):
         count = ingest_lines(SAMPLE_LOGS)
         st.success(f"Ingested and enriched {count} events!")
 
