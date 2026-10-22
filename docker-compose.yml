@@ -1,0 +1,15 @@
+services:
+  logbridge-dashboard:
+    image: python:3.12-slim
+    container_name: logbridge-framework
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8501:8501"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+    command: >
+      sh -c "pip install --no-cache-dir -r requirements.txt && streamlit run src/app.py --server.port=8501 --server.address=0.0.0.0"
+    restart: unless-stopped
