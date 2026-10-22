@@ -5,7 +5,7 @@ from src.mapper import FrameworkMapper
 from src.siem_connectors import SIEMExporter, SQLiteStorage
 
 __version__ = "1.0.0"
-__author__ = "Nova"
+__author__ = "Gavin Kye"
 
 __all__ = [
     "NormalizedLog",
